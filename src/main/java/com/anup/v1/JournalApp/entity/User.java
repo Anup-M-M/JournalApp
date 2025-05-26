@@ -12,17 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Document(collection = "users")
-//@Data
+@Data
 public class User {
 
     @Id
     private ObjectId id;
 
-//    @Indexed(unique = true)
-//    @NonNull
+    @Indexed(unique = true)
+    @NonNull
     private String userName;
 
-//    @NonNull
+   @NonNull
     private String password;
 
     @DBRef
@@ -41,43 +41,5 @@ public class User {
     public User() {
     }
 
-    public List<String> getRoles() {
-        return roles;
-    }
 
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
-    }
-
-    public ObjectId getId() {
-        return id;
-    }
-
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
-
-    public @NonNull String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(@NonNull String userName) {
-        this.userName = userName;
-    }
-
-    public @NonNull String getPassword() {
-        return password;
-    }
-
-    public void setPassword(@NonNull String password) {
-        this.password = password;
-    }
-
-    public List<JournalEntry> getJournalEntries() {
-        return journalEntries;
-    }
-
-    public void setJournalEntries(List<JournalEntry> journalEntries) {
-        this.journalEntries = journalEntries;
-    }
 }

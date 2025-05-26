@@ -24,7 +24,7 @@ public class JournalAppApplication {
 
 }
 
-// PlatformTransactionManager : this is interface it manage and handles Transaction commits and rollback.
+// PlatformTransactionManager : this is interface it manages and handles Transaction commits and rollback.
 // MongoTransactionManager : It implements PlatformTransactionManager
 // MongoDatabaseFactory : It creates the connection, manage DB connection
 // SimpleMongoClientDatabaseFactory : It implements MongoDatabaseFactory

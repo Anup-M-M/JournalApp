@@ -16,7 +16,6 @@ public class PublicController {
     @Autowired
     private UserService userService;
 
-
     @Autowired
     private UserRepository userRepository;
 
@@ -30,9 +29,8 @@ public class PublicController {
         return userService.findById(id).get();
     }
 
-
     @PostMapping("/create-user")
     public void createUser(@RequestBody User user) {
-        userService.saveUser(user);
+        userService.saveNewUser(user);
     }
 }
