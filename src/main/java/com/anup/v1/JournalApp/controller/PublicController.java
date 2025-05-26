@@ -19,14 +19,9 @@ public class PublicController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping
-    public List<User> getAll(){
-        return userService.findAll();
-    }
-
-    @GetMapping("id/{id}")
-    public User getUserById(@PathVariable ObjectId id){
-        return userService.findById(id).get();
+    @GetMapping("health-check")
+    public String healthCheck(){
+        return "OK";
     }
 
     @PostMapping("/create-user")
