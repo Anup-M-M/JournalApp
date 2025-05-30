@@ -23,7 +23,5 @@ import java.time.LocalDateTime;
 public class ConfigJournalAppEntity {
 
     private String key;
-
     private String value;
-
 }

@@ -1,5 +1,6 @@
 package com.anup.v1.JournalApp.entity;
 
+import com.anup.v1.JournalApp.constants.Sentiment;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Document(collection = "journal_entry")
 @Data
+@NoArgsConstructor
 /*
 @Getter
 @Setter
@@ -20,19 +22,10 @@ public class JournalEntry {
 
     @Id
     private ObjectId id;
-
     @NonNull
     private String title;
-
     private String content;
-
     private LocalDateTime date;
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public JournalEntry() {
-    }
+    private Sentiment sentiment;
 
 }
