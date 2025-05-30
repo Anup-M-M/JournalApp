@@ -1,7 +1,22 @@
+#Specify profiles
 spring:
   profiles:
     active: dev
 
+# mail sender through the Java Mail sender
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: anupmugabasav1999@gmail.com
+    password: dhmq bpeq njin uljk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+#Specify logging level
 logging:
   level:
     com:
