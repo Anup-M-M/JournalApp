@@ -1,6 +1,7 @@
 package com.anup.v1.JournalApp.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Document(collection = "users")
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -24,6 +26,10 @@ public class User {
 
    @NonNull
     private String password;
+
+   private String email;
+
+   private boolean sentimentAnalysis;
 
     @DBRef
     private List<JournalEntry> journalEntries = new ArrayList<>();
@@ -37,9 +43,5 @@ public class User {
         this.journalEntries = journalEntries;
         this.roles = roles;
     }
-
-    public User() {
-    }
-
 
 }
