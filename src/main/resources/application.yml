@@ -8,3 +8,7 @@ logging:
       anup:
         v1:
           JournalApp: DEBUG
+
+weather:
+  api:
+    key: c3cda83f8e152b8cfc5ab59450c04217

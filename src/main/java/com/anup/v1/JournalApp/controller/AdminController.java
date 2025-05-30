@@ -1,5 +1,6 @@
 package com.anup.v1.JournalApp.controller;
 
+import com.anup.v1.JournalApp.cache.AppCache;
 import com.anup.v1.JournalApp.entity.User;
 import com.anup.v1.JournalApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private AppCache appCache;
+
     @GetMapping("/all-users")
     public ResponseEntity<List<User>> getAllUser(){
         List<User> all = userService.findAll();
@@ -28,5 +32,10 @@ public class AdminController {
     @PostMapping("/create-admin-user")
     public void createUser(@RequestBody User user){
         userService.saveAdmin(user);
+    }
+
+    @GetMapping("/clear-app-cache")
+    public void clearAppCache(){
+        appCache.init();
     }
 }
