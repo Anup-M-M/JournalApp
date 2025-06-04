@@ -14,6 +14,31 @@ spring:
 
       auto-index-creation: true
 
+kafka:
+  bootstrap-servers: ${KAFKA_SERVERS}
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  consumer:
+    group-id: weekly-sentiment-group
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: com.anup.v1.JournalApp.model
+  properties:
+    security:
+      protocol: SASL_SSL
+    sasl:
+      mechanism: PLAIN
+      jaas:
+        config: org.apache.kafka.common.security.plain.PlainLoginModule required username='C5RFS3SEDTUEFYXO' password='rtYGEm4swfbUo7WJNS2AexFvVKYTZf7Hr7upEq/Hxb0r+8jkqGN/MC6qggYJfqiH';
+    session:
+      timeout:
+        ms: 45000
+
 server:
   port : 8080
 #  servlet:
