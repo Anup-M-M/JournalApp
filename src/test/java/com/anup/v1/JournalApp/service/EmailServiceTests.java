@@ -1,6 +1,5 @@
-package com.anup.v1.JournalApp;
+package com.anup.v1.JournalApp.service;
 
-import com.anup.v1.JournalApp.service.EmailService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ public class EmailServiceTests {
     @Autowired
     private EmailService emailService;
 
-    //@Disabled
+    @Disabled
     @Test
     void testSendMail() {
         emailService.sendEmail("mugabasavanup@gmail.com",

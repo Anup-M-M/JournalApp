@@ -1,6 +1,12 @@
 spring:
   application:
     name: JournalApp
+#redis config
+  redis:
+    host: redis-16941.c305.ap-south-1-1.ec2.redns.redis-cloud.com
+    port: 16941
+    password: gj3XNIeJ3TgZSST6RIze2nCCqHW4NtV8
+# mongodb config
   data:
     mongodb:
       uri: mongodb+srv://customuser:72uA27E5xC9NQRus@cluster0.uamo18y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
