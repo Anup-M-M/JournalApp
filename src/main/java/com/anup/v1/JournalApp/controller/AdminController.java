@@ -3,6 +3,7 @@ package com.anup.v1.JournalApp.controller;
 import com.anup.v1.JournalApp.cache.AppCache;
 import com.anup.v1.JournalApp.entity.User;
 import com.anup.v1.JournalApp.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@Tag(name = "Admin APIs")
 public class AdminController {
 
     @Autowired

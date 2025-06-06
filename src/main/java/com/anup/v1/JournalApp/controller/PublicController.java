@@ -1,9 +1,11 @@
 package com.anup.v1.JournalApp.controller;
 
+import com.anup.v1.JournalApp.dto.UserDTO;
 import com.anup.v1.JournalApp.entity.User;
 import com.anup.v1.JournalApp.repo.UserRepository;
 import com.anup.v1.JournalApp.service.UserDetailsServiceImpl;
 import com.anup.v1.JournalApp.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,7 @@ import com.anup.v1.JournalApp.utils.JwtUtil;
 @RestController
 @RequestMapping("/public")
 @Slf4j
+@Tag(name="Public APIs", description = "Retrieve, login, signup")
 public class PublicController {
 
     @Autowired
@@ -40,8 +43,13 @@ public class PublicController {
     }
 
     @PostMapping("/signup")
-    public void signup(@RequestBody User user) {
-        userService.saveNewUser(user);
+    public void signup(@RequestBody  UserDTO user) {
+        User newUser = new User();
+        newUser.setEmail(user.getEmail());
+        newUser.setUserName(user.getUserName());
+        newUser.setPassword(user.getPassword());
+        newUser.setSentimentAnalysis(user.isSentimentAnalysis());
+        userService.saveNewUser(newUser);
     }
 
     @PostMapping("/login")

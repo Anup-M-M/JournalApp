@@ -15,7 +15,7 @@ spring:
       auto-index-creation: true
 
 kafka:
-  bootstrap-servers: ${KAFKA_SERVERS}
+  bootstrap-servers: pkc-l7pr2.ap-south-1.aws.confluent.cloud:9092
   producer:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
