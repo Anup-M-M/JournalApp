@@ -1,6 +1,14 @@
 spring:
   application:
     name: JournalApp
+# oauth2 config
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
 #redis config
   redis:
     host: redis-16941.c305.ap-south-1-1.ec2.redns.redis-cloud.com
